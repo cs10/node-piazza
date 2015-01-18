@@ -1,0 +1,26 @@
+{
+  "name": "node-piazza",
+  "version": "0.0.1",
+  "description": "A node module for interfacing with an unofficial Piazza API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cs10/node-piazza.git"
+  },
+  "keywords": [
+    "Piazza",
+    "API",
+    "QA",
+    "education",
+    "Piazzza"
+  ],
+  "author": "Michael Ball",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/cs10/node-piazza/issues"
+  },
+  "homepage": "https://github.com/cs10/node-piazza"
+}
