@@ -18,7 +18,7 @@
     "Piazzza"
   ],
   "author": "Michael Ball",
-  "license": "BSD",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cs10/node-piazza/issues"
   },
