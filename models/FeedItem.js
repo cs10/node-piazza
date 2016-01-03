@@ -1,5 +1,5 @@
 var Content = require("./Content");
-var callPetty = require("../petty")
+var PiazzaRPC = require("../petty")
 
 var FeedItem = function(item, classId) {
     this.id = item.id;
@@ -16,7 +16,7 @@ var FeedItem = function(item, classId) {
 }
 
 FeedItem.prototype.toContent = function() {
-    var contentPromise = callPetty("content.get", {
+    var contentPromise = PiazzaRPC("content.get", {
         nid: this.classId,
         cid: this.id
     }).then(function(content) {
