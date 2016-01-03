@@ -1,6 +1,6 @@
 var _ = require("lodash");
 
-var PiazzaRPC = require("../petty");
+var PiazzaRPC = require("../piazza/rpc.js");
 
 function Content(content, classId, parent) {
     this.id = content.id;

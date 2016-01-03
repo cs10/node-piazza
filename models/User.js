@@ -1,7 +1,7 @@
 var _ = require("lodash");
 
 var Class = require("./Class");
-var PiazzaRPC = require("../petty");
+var PiazzaRPC = require("../piazza/rpc.js");
 
 function User(user) {
   this.id = user.id;

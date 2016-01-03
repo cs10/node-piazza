@@ -1,5 +1,5 @@
 var Content = require("./Content");
-var PiazzaRPC = require("../petty")
+var PiazzaRPC = require("../piazza/rpc.js")
 
 var FeedItem = function(item, classId) {
     this.id = item.id;
