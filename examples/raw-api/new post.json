@@ -1,0 +1,21 @@
+{
+    "method": "content.create",
+    "params": {
+        "anonymous": "no",
+        "client_time": "1/03/16 10:34 AM",
+        "config": {
+            "emails_notifications": false,
+            "feed_groups": "create test group 1_i6t3vsiq4u1uu",
+            "resolved_followups": true
+        },
+        "content": "<p>POST CONTENT</p>\n<p></p>\n<p><strong>BOLD</strong></p>\n<p><strong></strong></p>\n<p><em>ITALIC</em></p>\n<p><em></em></p>\n<p>Normal.</p>",
+        "folders": [
+            "lab1",
+            "CREATE TEST GROUP 1"
+        ],
+        "nid": "i6t3vsiq4u1uu",
+        "status": "active",
+        "subject": "TITLE",
+        "type": "note"
+    }
+}
