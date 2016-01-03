@@ -4,7 +4,7 @@ var apiUrl = "https://piazza.com/logic/api";
 var cookieJar = request.jar();
 
 var callPetty = function(method, params) {
-	var requestJson = {
+    var requestJson = {
     url: apiUrl, 
     json: {
       method: method,
@@ -13,18 +13,18 @@ var callPetty = function(method, params) {
     jar: cookieJar
   };
 
-	var promise = new Promise(function(resolve, reject) {
-		request.post(requestJson, function(error, response, body) {
-  		if (error) {
-  			return reject(error);
-  		} else if (body.error) {
-  			return reject(body.error);
-  		}
-  		return resolve(body.result);
-  	});
+    var promise = new Promise(function(resolve, reject) {
+        request.post(requestJson, function(error, response, body) {
+          if (error) {
+              return reject(error);
+          } else if (body.error) {
+              return reject(body.error);
+          }
+          return resolve(body.result);
+      });
   });
 
-	return promise;
+    return promise;
 }
 
 module.exports = callPetty;
