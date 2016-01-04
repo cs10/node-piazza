@@ -3,9 +3,9 @@ var _ = require("lodash");
 var School = require("./School");
 var Content = require("./Content");
 var FeedItem = require("./FeedItem");
-var callPetty = require("../petty");
+var PiazzaRPC = require("../piazza/rpc.js");
 
-var Class = function(course) {
+function Class(course) {
   this.id = course.id;
   this.name = course.name;
   this.courseNumber = course.course_number;
@@ -38,7 +38,7 @@ Class.prototype.init = function(course) {
 }
 
 Class.prototype.getOnlineUsersCount = function() {
-    var countPromise = callPetty("network.get_online_users", {
+    var countPromise = PiazzaRPC("network.get_online_users", {
         nid: this.id
     }).then(function(countData) {
         return countData.users;
@@ -47,7 +47,7 @@ Class.prototype.getOnlineUsersCount = function() {
 }
 
 Class.prototype.getStats = function() {
-    var statsPromise = callPetty("network.get_instructor_stats", {
+    var statsPromise = PiazzaRPC("network.get_instructor_stats", {
         nid: this.id
     }).then(function(stats) {
         return stats;
@@ -57,7 +57,7 @@ Class.prototype.getStats = function() {
 
 Class.prototype.getContentById = function(contentId) {
     var classId = this.id;
-    var contentPromise = callPetty("content.get", {
+    var contentPromise = PiazzaRPC("content.get", {
         nid: classId,
         cid: contentId
     }).then(function(data) {
@@ -68,7 +68,7 @@ Class.prototype.getContentById = function(contentId) {
 
 Class.prototype.filterByFolder = function(folderName) {
     var classId = this.id;
-    var filterPromise = callPetty("network.filter_feed", {
+    var filterPromise = PiazzaRPC("network.filter_feed", {
         nid: this.id,
         sort: "updated",
         filter_folder: folderName,
@@ -88,7 +88,7 @@ Class.prototype.filterByProperty = function(property) {
     };
     params[property] = 1;
     var classId = this.id;
-    var filterPromise = callPetty("network.filter_feed", params).then(function(data) {
+    var filterPromise = PiazzaRPC("network.filter_feed", params).then(function(data) {
         return _.map(data.feed, function(item) {
             return new FeedItem(item, classId);
         });
@@ -97,7 +97,7 @@ Class.prototype.filterByProperty = function(property) {
 }
 
 Class.prototype.search = function(query) {
-    var searchPromise = callPetty("network.search", {
+    var searchPromise = PiazzaRPC("network.search", {
         nid: this.id,
         query: query
     }).then(function(data) {
@@ -106,6 +106,20 @@ Class.prototype.search = function(query) {
         });
     });
     return searchPromise;
-}
+};
+
+Class.prototype.newPost = function (parameters) {
+    return PiazzaRPC("content.create", {
+        
+    });
+};
+
+Class.prototype.newQuestion = function (title, content, options) {
+    
+};
+
+Class.prototype.newNote = function (title, content, options) {
+    
+};
 
 module.exports = Class;

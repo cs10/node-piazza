@@ -1,5 +1,5 @@
 {
-  "name": "node-piazza",
+  "name": "piazza-api",
   "version": "0.0.1",
   "description": "A node module for interfacing with an unofficial Piazza API",
   "main": "index.js",
@@ -15,6 +15,7 @@
     "API",
     "QA",
     "education",
+    "discussion",
     "Piazzza"
   ],
   "author": "Michael Ball",
