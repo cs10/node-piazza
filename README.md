@@ -2,7 +2,7 @@
 A nodeJS module for interfacing with [piazza.com](piazza.com).
 
 **NOTE**: Do not use this repo! It is in development.
-Please use https://github.com/dyhwong/piazza-api
+Please use https://github.com/dyhwong/piazza-api from which this is based.
 
 This repo originally started as a fork of dyhwong/piazza-api, but will be taken in a different direction.
 
